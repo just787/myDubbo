@@ -9,6 +9,7 @@ import java.io.IOException;
  */
 public class Start {
     public static void main(String[] args) throws IOException {
+
         // 加载配置文件
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         System.out.println(context.getDisplayName() + ": starting...");
