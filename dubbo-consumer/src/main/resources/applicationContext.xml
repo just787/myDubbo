@@ -6,6 +6,11 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 加入spring注解扫描 -->
+	<!--<context:component-scan base-package="com.wdl.service"/>-->
+	<!-- 使用注解方式暴露接口 -->
+	<dubbo:annotation package="com.wdl.service"/>
 	<!-- 定义了提供方应用信息，用于计算依赖关系。在dubbo-admin 或 dubbo-monitor 会显示这个名字，方便识别 -->
 	<dubbo:application name="demo-consumer" owner="demo" organization="dubbox"/>
 	<!-- 向zookeeper 订阅provider 的地址，由zookeeper 定时推送 -->

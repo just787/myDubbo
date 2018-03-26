@@ -12,9 +12,9 @@ public class Start {
 
         // 加载配置文件
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        System.out.println(context.getDisplayName() + ": starting...");
         context.start();
-        System.out.println("provider started.");
+        System.out.println(context.getDisplayName() + ": started.");
+        // 堵塞进程, 防止服务进程运行完毕而死亡
         System.in.read();
     }
 }
