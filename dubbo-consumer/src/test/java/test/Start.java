@@ -1,5 +1,6 @@
 package test;
 
+import com.dubbo.service.DemoService;
 import com.wdl.service.ConsumerService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,15 +16,11 @@ public class Start {
         context.start();
         System.out.println(context.getDisplayName() + ": started.");
 
-        /**
-         * 调用方式 1
-         */
-        /*DemoService demoService = context.getBean(DemoService.class);
-        System.out.println(demoService.getPermissions(1L));*/
+        // 调用方式 1
+        DemoService demoService = context.getBean(DemoService.class);
+        System.out.println(demoService.getPermissions(1L));
 
-        /**
-         * 调用方式2
-         */
+        // 调用方式2
         ConsumerService consumerService = context.getBean(ConsumerService.class);
         System.out.println(consumerService.getPermissions(1L));
 
@@ -33,5 +30,8 @@ public class Start {
             long param = Long.valueOf(scanner.nextLine());
             System.out.println(consumerService.getPermissions(param));
         }
+
+        // 点对点接收消息测试
+        //ActiveMQDemo.receiveTest(true);
     }
 }

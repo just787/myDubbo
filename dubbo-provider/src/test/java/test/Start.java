@@ -16,5 +16,9 @@ public class Start {
         System.out.println(context.getDisplayName() + ": started.");
         // 堵塞进程, 防止服务进程运行完毕而死亡
         System.in.read();
+
+
+        // activeMq 发送消息测试
+        //ActiveMQDemo.sendTest(true);
     }
 }
